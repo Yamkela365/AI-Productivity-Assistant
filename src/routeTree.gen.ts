@@ -15,6 +15,7 @@ import { Route as PrioritiesRouteImport } from './routes/priorities'
 import { Route as EmailsRouteImport } from './routes/emails'
 import { Route as CalendarRouteImport } from './routes/calendar'
 import { Route as AuditsRouteImport } from './routes/audits'
+import { Route as AssistantRouteImport } from './routes/assistant'
 import { Route as AppointmentsRouteImport } from './routes/appointments'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
@@ -49,6 +50,11 @@ const AuditsRoute = AuditsRouteImport.update({
   path: '/audits',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AssistantRoute = AssistantRouteImport.update({
+  id: '/assistant',
+  path: '/assistant',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AppointmentsRoute = AppointmentsRouteImport.update({
   id: '/appointments',
   path: '/appointments',
@@ -68,6 +74,7 @@ const ApiChatRoute = ApiChatRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/appointments': typeof AppointmentsRoute
+  '/assistant': typeof AssistantRoute
   '/audits': typeof AuditsRoute
   '/calendar': typeof CalendarRoute
   '/emails': typeof EmailsRoute
@@ -79,6 +86,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/appointments': typeof AppointmentsRoute
+  '/assistant': typeof AssistantRoute
   '/audits': typeof AuditsRoute
   '/calendar': typeof CalendarRoute
   '/emails': typeof EmailsRoute
@@ -91,6 +99,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/appointments': typeof AppointmentsRoute
+  '/assistant': typeof AssistantRoute
   '/audits': typeof AuditsRoute
   '/calendar': typeof CalendarRoute
   '/emails': typeof EmailsRoute
@@ -104,6 +113,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/appointments'
+    | '/assistant'
     | '/audits'
     | '/calendar'
     | '/emails'
@@ -115,6 +125,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/appointments'
+    | '/assistant'
     | '/audits'
     | '/calendar'
     | '/emails'
@@ -126,6 +137,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/appointments'
+    | '/assistant'
     | '/audits'
     | '/calendar'
     | '/emails'
@@ -138,6 +150,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AppointmentsRoute: typeof AppointmentsRoute
+  AssistantRoute: typeof AssistantRoute
   AuditsRoute: typeof AuditsRoute
   CalendarRoute: typeof CalendarRoute
   EmailsRoute: typeof EmailsRoute
@@ -191,6 +204,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuditsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/assistant': {
+      id: '/assistant'
+      path: '/assistant'
+      fullPath: '/assistant'
+      preLoaderRoute: typeof AssistantRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/appointments': {
       id: '/appointments'
       path: '/appointments'
@@ -218,6 +238,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AppointmentsRoute: AppointmentsRoute,
+  AssistantRoute: AssistantRoute,
   AuditsRoute: AuditsRoute,
   CalendarRoute: CalendarRoute,
   EmailsRoute: EmailsRoute,
