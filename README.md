@@ -1,4 +1,3 @@
-
 # Task Management Hub
 
 ## Project Overview
@@ -58,5 +57,3 @@ Task Management Hub is a web application designed to centralize daily productivi
 3. Add `.env` file with API keys for Firebase, Gmail, OpenAI
 4. Run locally: `npm run dev`
 5. Deploy: `vercel deploy` or `npm run build`
-
-
