@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TasksRouteImport } from './routes/tasks'
 import { Route as ReportsRouteImport } from './routes/reports'
 import { Route as PrioritiesRouteImport } from './routes/priorities'
+import { Route as EmailsRouteImport } from './routes/emails'
 import { Route as CalendarRouteImport } from './routes/calendar'
 import { Route as AuditsRouteImport } from './routes/audits'
 import { Route as AppointmentsRouteImport } from './routes/appointments'
@@ -31,6 +32,11 @@ const ReportsRoute = ReportsRouteImport.update({
 const PrioritiesRoute = PrioritiesRouteImport.update({
   id: '/priorities',
   path: '/priorities',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EmailsRoute = EmailsRouteImport.update({
+  id: '/emails',
+  path: '/emails',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CalendarRoute = CalendarRouteImport.update({
@@ -64,6 +70,7 @@ export interface FileRoutesByFullPath {
   '/appointments': typeof AppointmentsRoute
   '/audits': typeof AuditsRoute
   '/calendar': typeof CalendarRoute
+  '/emails': typeof EmailsRoute
   '/priorities': typeof PrioritiesRoute
   '/reports': typeof ReportsRoute
   '/tasks': typeof TasksRoute
@@ -74,6 +81,7 @@ export interface FileRoutesByTo {
   '/appointments': typeof AppointmentsRoute
   '/audits': typeof AuditsRoute
   '/calendar': typeof CalendarRoute
+  '/emails': typeof EmailsRoute
   '/priorities': typeof PrioritiesRoute
   '/reports': typeof ReportsRoute
   '/tasks': typeof TasksRoute
@@ -85,6 +93,7 @@ export interface FileRoutesById {
   '/appointments': typeof AppointmentsRoute
   '/audits': typeof AuditsRoute
   '/calendar': typeof CalendarRoute
+  '/emails': typeof EmailsRoute
   '/priorities': typeof PrioritiesRoute
   '/reports': typeof ReportsRoute
   '/tasks': typeof TasksRoute
@@ -97,6 +106,7 @@ export interface FileRouteTypes {
     | '/appointments'
     | '/audits'
     | '/calendar'
+    | '/emails'
     | '/priorities'
     | '/reports'
     | '/tasks'
@@ -107,6 +117,7 @@ export interface FileRouteTypes {
     | '/appointments'
     | '/audits'
     | '/calendar'
+    | '/emails'
     | '/priorities'
     | '/reports'
     | '/tasks'
@@ -117,6 +128,7 @@ export interface FileRouteTypes {
     | '/appointments'
     | '/audits'
     | '/calendar'
+    | '/emails'
     | '/priorities'
     | '/reports'
     | '/tasks'
@@ -128,6 +140,7 @@ export interface RootRouteChildren {
   AppointmentsRoute: typeof AppointmentsRoute
   AuditsRoute: typeof AuditsRoute
   CalendarRoute: typeof CalendarRoute
+  EmailsRoute: typeof EmailsRoute
   PrioritiesRoute: typeof PrioritiesRoute
   ReportsRoute: typeof ReportsRoute
   TasksRoute: typeof TasksRoute
@@ -155,6 +168,13 @@ declare module '@tanstack/react-router' {
       path: '/priorities'
       fullPath: '/priorities'
       preLoaderRoute: typeof PrioritiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/emails': {
+      id: '/emails'
+      path: '/emails'
+      fullPath: '/emails'
+      preLoaderRoute: typeof EmailsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/calendar': {
@@ -200,6 +220,7 @@ const rootRouteChildren: RootRouteChildren = {
   AppointmentsRoute: AppointmentsRoute,
   AuditsRoute: AuditsRoute,
   CalendarRoute: CalendarRoute,
+  EmailsRoute: EmailsRoute,
   PrioritiesRoute: PrioritiesRoute,
   ReportsRoute: ReportsRoute,
   TasksRoute: TasksRoute,
