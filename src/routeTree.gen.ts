@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TasksRouteImport } from './routes/tasks'
 import { Route as ReportsRouteImport } from './routes/reports'
 import { Route as CalendarRouteImport } from './routes/calendar'
+import { Route as AuditsRouteImport } from './routes/audits'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 
@@ -30,6 +31,11 @@ const CalendarRoute = CalendarRouteImport.update({
   path: '/calendar',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuditsRoute = AuditsRouteImport.update({
+  id: '/audits',
+  path: '/audits',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -43,6 +49,7 @@ const ApiChatRoute = ApiChatRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/audits': typeof AuditsRoute
   '/calendar': typeof CalendarRoute
   '/reports': typeof ReportsRoute
   '/tasks': typeof TasksRoute
@@ -50,6 +57,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/audits': typeof AuditsRoute
   '/calendar': typeof CalendarRoute
   '/reports': typeof ReportsRoute
   '/tasks': typeof TasksRoute
@@ -58,6 +66,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/audits': typeof AuditsRoute
   '/calendar': typeof CalendarRoute
   '/reports': typeof ReportsRoute
   '/tasks': typeof TasksRoute
@@ -65,14 +74,22 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/calendar' | '/reports' | '/tasks' | '/api/chat'
+  fullPaths: '/' | '/audits' | '/calendar' | '/reports' | '/tasks' | '/api/chat'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/calendar' | '/reports' | '/tasks' | '/api/chat'
-  id: '__root__' | '/' | '/calendar' | '/reports' | '/tasks' | '/api/chat'
+  to: '/' | '/audits' | '/calendar' | '/reports' | '/tasks' | '/api/chat'
+  id:
+    | '__root__'
+    | '/'
+    | '/audits'
+    | '/calendar'
+    | '/reports'
+    | '/tasks'
+    | '/api/chat'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuditsRoute: typeof AuditsRoute
   CalendarRoute: typeof CalendarRoute
   ReportsRoute: typeof ReportsRoute
   TasksRoute: typeof TasksRoute
@@ -102,6 +119,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CalendarRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/audits': {
+      id: '/audits'
+      path: '/audits'
+      fullPath: '/audits'
+      preLoaderRoute: typeof AuditsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -121,6 +145,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuditsRoute: AuditsRoute,
   CalendarRoute: CalendarRoute,
   ReportsRoute: ReportsRoute,
   TasksRoute: TasksRoute,
