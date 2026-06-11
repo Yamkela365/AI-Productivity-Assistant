@@ -82,7 +82,7 @@ const day = (offsetDays: number) => {
 };
 
 export const users: AppUser[] = [
-  { id: "u1", name: "Alex Morgan", email: "alex@taskflow.ai", role: "Admin", avatarColor: "#2563eb" },
+  { id: "u1", name: "YamkelaM", email: "yamkela@taskflow.ai", role: "Admin", avatarColor: "#2563eb" },
   { id: "u2", name: "Priya Sharma", email: "priya@taskflow.ai", role: "Manager", avatarColor: "#14b8a6" },
   { id: "u3", name: "Diego Lopez", email: "diego@taskflow.ai", role: "User", avatarColor: "#f59e0b" },
   { id: "u4", name: "Mia Chen", email: "mia@taskflow.ai", role: "User", avatarColor: "#8b5cf6" },
@@ -93,44 +93,44 @@ export const currentUser = users[0];
 const categories = ["Marketing", "Engineering", "Finance", "Operations", "Design", "Sales"];
 
 export const tasks: Task[] = [
-  { id: "t1", title: "Submit monthly financial report", description: "Compile Q figures and submit to finance leadership.", priority: "critical", status: "in-progress", dueDate: iso(1, 17), category: "Finance", assignee: "Alex Morgan", attachments: 2 },
+  { id: "t1", title: "Submit monthly financial report", description: "Compile Q figures and submit to finance leadership.", priority: "critical", status: "in-progress", dueDate: iso(1, 17), category: "Finance", assignee: "YamkelaM", attachments: 2 },
   { id: "t2", title: "Design new onboarding flow", description: "Wireframes and prototype for the new signup experience.", priority: "high", status: "in-progress", dueDate: iso(3, 12), category: "Design", assignee: "Mia Chen", attachments: 4 },
   { id: "t3", title: "Fix checkout bug on mobile", description: "Investigate payment failure on iOS Safari.", priority: "critical", status: "pending", dueDate: iso(0, 15), category: "Engineering", assignee: "Diego Lopez", attachments: 1 },
   { id: "t4", title: "Prepare Q3 marketing campaign", description: "Plan channels, budget and creative direction.", priority: "medium", status: "pending", dueDate: iso(6, 10), category: "Marketing", assignee: "Priya Sharma", attachments: 0 },
-  { id: "t5", title: "Review vendor contracts", description: "Legal review of three new supplier agreements.", priority: "high", status: "overdue", dueDate: iso(-2, 9), category: "Operations", assignee: "Alex Morgan", attachments: 3 },
+  { id: "t5", title: "Review vendor contracts", description: "Legal review of three new supplier agreements.", priority: "high", status: "overdue", dueDate: iso(-2, 9), category: "Operations", assignee: "YamkelaM", attachments: 3 },
   { id: "t6", title: "Update brand guidelines", description: "Refresh logo usage and color palette docs.", priority: "low", status: "completed", dueDate: iso(-4, 14), category: "Design", assignee: "Mia Chen", attachments: 1 },
   { id: "t7", title: "Onboard new sales hires", description: "Set up accounts and training schedule.", priority: "medium", status: "in-progress", dueDate: iso(4, 11), category: "Sales", assignee: "Priya Sharma", attachments: 0 },
   { id: "t8", title: "Database performance tuning", description: "Optimize slow queries on the analytics service.", priority: "high", status: "pending", dueDate: iso(2, 16), category: "Engineering", assignee: "Diego Lopez", attachments: 2 },
-  { id: "t9", title: "Quarterly compliance check", description: "Verify GDPR data handling processes.", priority: "critical", status: "overdue", dueDate: iso(-1, 9), category: "Operations", assignee: "Alex Morgan", attachments: 5 },
+  { id: "t9", title: "Quarterly compliance check", description: "Verify GDPR data handling processes.", priority: "critical", status: "overdue", dueDate: iso(-1, 9), category: "Operations", assignee: "YamkelaM", attachments: 5 },
   { id: "t10", title: "Write release notes v2.4", description: "Summarize new features for the changelog.", priority: "low", status: "completed", dueDate: iso(-3, 13), category: "Engineering", assignee: "Diego Lopez", attachments: 0 },
   { id: "t11", title: "Customer feedback synthesis", description: "Cluster survey responses into themes.", priority: "medium", status: "pending", dueDate: iso(5, 10), category: "Marketing", assignee: "Mia Chen", attachments: 1 },
   { id: "t12", title: "Renew cloud subscriptions", description: "Confirm budget and renew annual plans.", priority: "high", status: "in-progress", dueDate: iso(8, 9), category: "Finance", assignee: "Priya Sharma", attachments: 0 },
 ];
 
 export const appointments: Appointment[] = [
-  { id: "a1", title: "Product strategy sync", date: day(0), time: "10:00", location: "Zoom", notes: "Discuss roadmap for next quarter.", attendees: ["Alex Morgan", "Priya Sharma"], meetingLink: "https://zoom.us/j/123", status: "upcoming" },
+  { id: "a1", title: "Product strategy sync", date: day(0), time: "10:00", location: "Zoom", notes: "Discuss roadmap for next quarter.", attendees: ["YamkelaM", "Priya Sharma"], meetingLink: "https://zoom.us/j/123", status: "upcoming" },
   { id: "a2", title: "Client onboarding call", date: day(1), time: "14:00", location: "Google Meet", notes: "Walk through platform setup with Acme Co.", attendees: ["Diego Lopez", "Mia Chen"], meetingLink: "https://meet.google.com/abc", status: "upcoming" },
-  { id: "a3", title: "Field audit — Warehouse B", date: day(2), time: "09:30", location: "Site B, Rotterdam", notes: "On-site safety compliance audit.", attendees: ["Alex Morgan"], status: "upcoming" },
+  { id: "a3", title: "Field audit — Warehouse B", date: day(2), time: "09:30", location: "Site B, Rotterdam", notes: "On-site safety compliance audit.", attendees: ["YamkelaM"], status: "upcoming" },
   { id: "a4", title: "Design review", date: day(-1), time: "11:00", location: "Figma", notes: "Reviewed onboarding mockups.", attendees: ["Mia Chen", "Priya Sharma"], status: "completed" },
-  { id: "a5", title: "Budget planning", date: day(-3), time: "15:00", location: "Conference Room A", notes: "Cancelled — rescheduled to next week.", attendees: ["Alex Morgan", "Priya Sharma"], status: "cancelled" },
-  { id: "a6", title: "Weekly standup", date: day(3), time: "09:00", location: "Microsoft Teams", notes: "Team progress check-in.", attendees: ["Alex Morgan", "Diego Lopez", "Mia Chen"], meetingLink: "https://teams.microsoft.com/l/x", status: "upcoming" },
+  { id: "a5", title: "Budget planning", date: day(-3), time: "15:00", location: "Conference Room A", notes: "Cancelled — rescheduled to next week.", attendees: ["YamkelaM", "Priya Sharma"], status: "cancelled" },
+  { id: "a6", title: "Weekly standup", date: day(3), time: "09:00", location: "Microsoft Teams", notes: "Team progress check-in.", attendees: ["YamkelaM", "Diego Lopez", "Mia Chen"], meetingLink: "https://teams.microsoft.com/l/x", status: "upcoming" },
 ];
 
 export const audits: Audit[] = [
-  { id: "au1", name: "Annual Security Audit", date: day(-5), department: "IT", auditor: "Alex Morgan", findings: 7, risk: "high", status: "in-review", compliance: 82 },
+  { id: "au1", name: "Annual Security Audit", date: day(-5), department: "IT", auditor: "YamkelaM", findings: 7, risk: "high", status: "in-review", compliance: 82 },
   { id: "au2", name: "Financial Controls Review", date: day(-12), department: "Finance", auditor: "Priya Sharma", findings: 3, risk: "medium", status: "closed", compliance: 95 },
-  { id: "au3", name: "Warehouse Safety Inspection", date: day(2), department: "Operations", auditor: "Alex Morgan", findings: 0, risk: "low", status: "open", compliance: 100 },
+  { id: "au3", name: "Warehouse Safety Inspection", date: day(2), department: "Operations", auditor: "YamkelaM", findings: 0, risk: "low", status: "open", compliance: 100 },
   { id: "au4", name: "GDPR Compliance Audit", date: day(-2), department: "Legal", auditor: "Priya Sharma", findings: 12, risk: "critical", status: "open", compliance: 64 },
   { id: "au5", name: "Vendor Risk Assessment", date: day(-20), department: "Procurement", auditor: "Diego Lopez", findings: 5, risk: "medium", status: "closed", compliance: 88 },
 ];
 
 export const emails: Email[] = [
-  { id: "e1", from: "Acme Corp", fromEmail: "ops@acme.com", subject: "Contract renewal — action needed by Friday", preview: "Hi Alex, please review the attached renewal terms and confirm before the deadline this Friday.", date: iso(0, 8, 12), box: "inbox", unread: true, flagged: true },
+  { id: "e1", from: "Acme Corp", fromEmail: "ops@acme.com", subject: "Contract renewal — action needed by Friday", preview: "Hi YamkelaM, please review the attached renewal terms and confirm before the deadline this Friday.", date: iso(0, 8, 12), box: "inbox", unread: true, flagged: true },
   { id: "e2", from: "Priya Sharma", fromEmail: "priya@taskflow.ai", subject: "Q3 campaign draft for review", preview: "Sharing the first draft of the campaign plan. Can we sync tomorrow to finalize?", date: iso(0, 7, 40), box: "inbox", unread: true, flagged: false },
   { id: "e3", from: "GitHub", fromEmail: "noreply@github.com", subject: "Security alert in repository", preview: "A new vulnerability was detected in one of your dependencies.", date: iso(-1, 22, 5), box: "inbox", unread: true, flagged: false },
   { id: "e4", from: "Finance Team", fromEmail: "finance@taskflow.ai", subject: "Reminder: submit expenses", preview: "Monthly expense reports are due end of week. Please follow up.", date: iso(-1, 16, 0), box: "inbox", unread: false, flagged: false },
-  { id: "e5", from: "Alex Morgan", fromEmail: "alex@taskflow.ai", subject: "Re: Roadmap priorities", preview: "Agreed on the priorities. Let's lock the deadline for the launch.", date: iso(-2, 10, 0), box: "sent", unread: false, flagged: false },
-  { id: "e6", from: "Alex Morgan", fromEmail: "alex@taskflow.ai", subject: "Draft: Partnership proposal", preview: "Outline for the partnership pitch — still need numbers.", date: iso(-1, 18, 0), box: "drafts", unread: false, flagged: false },
+  { id: "e5", from: "YamkelaM", fromEmail: "yamkela@taskflow.ai", subject: "Re: Roadmap priorities", preview: "Agreed on the priorities. Let's lock the deadline for the launch.", date: iso(-2, 10, 0), box: "sent", unread: false, flagged: false },
+  { id: "e6", from: "YamkelaM", fromEmail: "yamkela@taskflow.ai", subject: "Draft: Partnership proposal", preview: "Outline for the partnership pitch — still need numbers.", date: iso(-1, 18, 0), box: "drafts", unread: false, flagged: false },
   { id: "e7", from: "Newsletter", fromEmail: "hello@producthunt.com", subject: "This week in tech", preview: "Top launches and trends you might have missed.", date: iso(-6, 9, 0), box: "archived", unread: false, flagged: false },
 ];
 
