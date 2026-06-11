@@ -13,6 +13,7 @@ import { Route as TasksRouteImport } from './routes/tasks'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as ReportsRouteImport } from './routes/reports'
 import { Route as PrioritiesRouteImport } from './routes/priorities'
+import { Route as LoginRouteImport } from './routes/login'
 import { Route as EmailsRouteImport } from './routes/emails'
 import { Route as CalendarRouteImport } from './routes/calendar'
 import { Route as AuditsRouteImport } from './routes/audits'
@@ -39,6 +40,11 @@ const ReportsRoute = ReportsRouteImport.update({
 const PrioritiesRoute = PrioritiesRouteImport.update({
   id: '/priorities',
   path: '/priorities',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EmailsRoute = EmailsRouteImport.update({
@@ -84,6 +90,7 @@ export interface FileRoutesByFullPath {
   '/audits': typeof AuditsRoute
   '/calendar': typeof CalendarRoute
   '/emails': typeof EmailsRoute
+  '/login': typeof LoginRoute
   '/priorities': typeof PrioritiesRoute
   '/reports': typeof ReportsRoute
   '/settings': typeof SettingsRoute
@@ -97,6 +104,7 @@ export interface FileRoutesByTo {
   '/audits': typeof AuditsRoute
   '/calendar': typeof CalendarRoute
   '/emails': typeof EmailsRoute
+  '/login': typeof LoginRoute
   '/priorities': typeof PrioritiesRoute
   '/reports': typeof ReportsRoute
   '/settings': typeof SettingsRoute
@@ -111,6 +119,7 @@ export interface FileRoutesById {
   '/audits': typeof AuditsRoute
   '/calendar': typeof CalendarRoute
   '/emails': typeof EmailsRoute
+  '/login': typeof LoginRoute
   '/priorities': typeof PrioritiesRoute
   '/reports': typeof ReportsRoute
   '/settings': typeof SettingsRoute
@@ -126,6 +135,7 @@ export interface FileRouteTypes {
     | '/audits'
     | '/calendar'
     | '/emails'
+    | '/login'
     | '/priorities'
     | '/reports'
     | '/settings'
@@ -139,6 +149,7 @@ export interface FileRouteTypes {
     | '/audits'
     | '/calendar'
     | '/emails'
+    | '/login'
     | '/priorities'
     | '/reports'
     | '/settings'
@@ -152,6 +163,7 @@ export interface FileRouteTypes {
     | '/audits'
     | '/calendar'
     | '/emails'
+    | '/login'
     | '/priorities'
     | '/reports'
     | '/settings'
@@ -166,6 +178,7 @@ export interface RootRouteChildren {
   AuditsRoute: typeof AuditsRoute
   CalendarRoute: typeof CalendarRoute
   EmailsRoute: typeof EmailsRoute
+  LoginRoute: typeof LoginRoute
   PrioritiesRoute: typeof PrioritiesRoute
   ReportsRoute: typeof ReportsRoute
   SettingsRoute: typeof SettingsRoute
@@ -201,6 +214,13 @@ declare module '@tanstack/react-router' {
       path: '/priorities'
       fullPath: '/priorities'
       preLoaderRoute: typeof PrioritiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/emails': {
@@ -262,6 +282,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuditsRoute: AuditsRoute,
   CalendarRoute: CalendarRoute,
   EmailsRoute: EmailsRoute,
+  LoginRoute: LoginRoute,
   PrioritiesRoute: PrioritiesRoute,
   ReportsRoute: ReportsRoute,
   SettingsRoute: SettingsRoute,
@@ -271,3 +292,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
