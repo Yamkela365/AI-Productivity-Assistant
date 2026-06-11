@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TasksRouteImport } from './routes/tasks'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as ReportsRouteImport } from './routes/reports'
+import { Route as RegisterRouteImport } from './routes/register'
 import { Route as PrioritiesRouteImport } from './routes/priorities'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as EmailsRouteImport } from './routes/emails'
@@ -35,6 +36,11 @@ const SettingsRoute = SettingsRouteImport.update({
 const ReportsRoute = ReportsRouteImport.update({
   id: '/reports',
   path: '/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegisterRoute = RegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrioritiesRoute = PrioritiesRouteImport.update({
@@ -92,6 +98,7 @@ export interface FileRoutesByFullPath {
   '/emails': typeof EmailsRoute
   '/login': typeof LoginRoute
   '/priorities': typeof PrioritiesRoute
+  '/register': typeof RegisterRoute
   '/reports': typeof ReportsRoute
   '/settings': typeof SettingsRoute
   '/tasks': typeof TasksRoute
@@ -106,6 +113,7 @@ export interface FileRoutesByTo {
   '/emails': typeof EmailsRoute
   '/login': typeof LoginRoute
   '/priorities': typeof PrioritiesRoute
+  '/register': typeof RegisterRoute
   '/reports': typeof ReportsRoute
   '/settings': typeof SettingsRoute
   '/tasks': typeof TasksRoute
@@ -121,6 +129,7 @@ export interface FileRoutesById {
   '/emails': typeof EmailsRoute
   '/login': typeof LoginRoute
   '/priorities': typeof PrioritiesRoute
+  '/register': typeof RegisterRoute
   '/reports': typeof ReportsRoute
   '/settings': typeof SettingsRoute
   '/tasks': typeof TasksRoute
@@ -137,6 +146,7 @@ export interface FileRouteTypes {
     | '/emails'
     | '/login'
     | '/priorities'
+    | '/register'
     | '/reports'
     | '/settings'
     | '/tasks'
@@ -151,6 +161,7 @@ export interface FileRouteTypes {
     | '/emails'
     | '/login'
     | '/priorities'
+    | '/register'
     | '/reports'
     | '/settings'
     | '/tasks'
@@ -165,6 +176,7 @@ export interface FileRouteTypes {
     | '/emails'
     | '/login'
     | '/priorities'
+    | '/register'
     | '/reports'
     | '/settings'
     | '/tasks'
@@ -180,6 +192,7 @@ export interface RootRouteChildren {
   EmailsRoute: typeof EmailsRoute
   LoginRoute: typeof LoginRoute
   PrioritiesRoute: typeof PrioritiesRoute
+  RegisterRoute: typeof RegisterRoute
   ReportsRoute: typeof ReportsRoute
   SettingsRoute: typeof SettingsRoute
   TasksRoute: typeof TasksRoute
@@ -207,6 +220,13 @@ declare module '@tanstack/react-router' {
       path: '/reports'
       fullPath: '/reports'
       preLoaderRoute: typeof ReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/register': {
+      id: '/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof RegisterRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/priorities': {
@@ -284,6 +304,7 @@ const rootRouteChildren: RootRouteChildren = {
   EmailsRoute: EmailsRoute,
   LoginRoute: LoginRoute,
   PrioritiesRoute: PrioritiesRoute,
+  RegisterRoute: RegisterRoute,
   ReportsRoute: ReportsRoute,
   SettingsRoute: SettingsRoute,
   TasksRoute: TasksRoute,
