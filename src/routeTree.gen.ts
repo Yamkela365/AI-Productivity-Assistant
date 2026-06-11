@@ -12,7 +12,9 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TasksRouteImport } from './routes/tasks'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as ReportsRouteImport } from './routes/reports'
+import { Route as RegisterRouteImport } from './routes/register'
 import { Route as PrioritiesRouteImport } from './routes/priorities'
+import { Route as LoginRouteImport } from './routes/login'
 import { Route as EmailsRouteImport } from './routes/emails'
 import { Route as CalendarRouteImport } from './routes/calendar'
 import { Route as AuditsRouteImport } from './routes/audits'
@@ -36,9 +38,19 @@ const ReportsRoute = ReportsRouteImport.update({
   path: '/reports',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RegisterRoute = RegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PrioritiesRoute = PrioritiesRouteImport.update({
   id: '/priorities',
   path: '/priorities',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EmailsRoute = EmailsRouteImport.update({
@@ -84,7 +96,9 @@ export interface FileRoutesByFullPath {
   '/audits': typeof AuditsRoute
   '/calendar': typeof CalendarRoute
   '/emails': typeof EmailsRoute
+  '/login': typeof LoginRoute
   '/priorities': typeof PrioritiesRoute
+  '/register': typeof RegisterRoute
   '/reports': typeof ReportsRoute
   '/settings': typeof SettingsRoute
   '/tasks': typeof TasksRoute
@@ -97,7 +111,9 @@ export interface FileRoutesByTo {
   '/audits': typeof AuditsRoute
   '/calendar': typeof CalendarRoute
   '/emails': typeof EmailsRoute
+  '/login': typeof LoginRoute
   '/priorities': typeof PrioritiesRoute
+  '/register': typeof RegisterRoute
   '/reports': typeof ReportsRoute
   '/settings': typeof SettingsRoute
   '/tasks': typeof TasksRoute
@@ -111,7 +127,9 @@ export interface FileRoutesById {
   '/audits': typeof AuditsRoute
   '/calendar': typeof CalendarRoute
   '/emails': typeof EmailsRoute
+  '/login': typeof LoginRoute
   '/priorities': typeof PrioritiesRoute
+  '/register': typeof RegisterRoute
   '/reports': typeof ReportsRoute
   '/settings': typeof SettingsRoute
   '/tasks': typeof TasksRoute
@@ -126,7 +144,9 @@ export interface FileRouteTypes {
     | '/audits'
     | '/calendar'
     | '/emails'
+    | '/login'
     | '/priorities'
+    | '/register'
     | '/reports'
     | '/settings'
     | '/tasks'
@@ -139,7 +159,9 @@ export interface FileRouteTypes {
     | '/audits'
     | '/calendar'
     | '/emails'
+    | '/login'
     | '/priorities'
+    | '/register'
     | '/reports'
     | '/settings'
     | '/tasks'
@@ -152,7 +174,9 @@ export interface FileRouteTypes {
     | '/audits'
     | '/calendar'
     | '/emails'
+    | '/login'
     | '/priorities'
+    | '/register'
     | '/reports'
     | '/settings'
     | '/tasks'
@@ -166,7 +190,9 @@ export interface RootRouteChildren {
   AuditsRoute: typeof AuditsRoute
   CalendarRoute: typeof CalendarRoute
   EmailsRoute: typeof EmailsRoute
+  LoginRoute: typeof LoginRoute
   PrioritiesRoute: typeof PrioritiesRoute
+  RegisterRoute: typeof RegisterRoute
   ReportsRoute: typeof ReportsRoute
   SettingsRoute: typeof SettingsRoute
   TasksRoute: typeof TasksRoute
@@ -196,11 +222,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReportsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/register': {
+      id: '/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/priorities': {
       id: '/priorities'
       path: '/priorities'
       fullPath: '/priorities'
       preLoaderRoute: typeof PrioritiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/emails': {
@@ -262,7 +302,9 @@ const rootRouteChildren: RootRouteChildren = {
   AuditsRoute: AuditsRoute,
   CalendarRoute: CalendarRoute,
   EmailsRoute: EmailsRoute,
+  LoginRoute: LoginRoute,
   PrioritiesRoute: PrioritiesRoute,
+  RegisterRoute: RegisterRoute,
   ReportsRoute: ReportsRoute,
   SettingsRoute: SettingsRoute,
   TasksRoute: TasksRoute,
