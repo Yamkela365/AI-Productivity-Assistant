@@ -93,15 +93,15 @@ export const currentUser = users[0];
 const categories = ["Marketing", "Engineering", "Finance", "Operations", "Design", "Sales"];
 
 export const tasks: Task[] = [
-  { id: "t1", title: "Submit monthly financial report", description: "Compile Q figures and submit to finance leadership.", priority: "critical", status: "in-progress", dueDate: iso(1, 17), category: "Finance", assignee: "Alex Morgan", attachments: 2 },
+  { id: "t1", title: "Submit monthly financial report", description: "Compile Q figures and submit to finance leadership.", priority: "critical", status: "in-progress", dueDate: iso(1, 17), category: "Finance", assignee: "YamkelaM", attachments: 2 },
   { id: "t2", title: "Design new onboarding flow", description: "Wireframes and prototype for the new signup experience.", priority: "high", status: "in-progress", dueDate: iso(3, 12), category: "Design", assignee: "Mia Chen", attachments: 4 },
   { id: "t3", title: "Fix checkout bug on mobile", description: "Investigate payment failure on iOS Safari.", priority: "critical", status: "pending", dueDate: iso(0, 15), category: "Engineering", assignee: "Diego Lopez", attachments: 1 },
   { id: "t4", title: "Prepare Q3 marketing campaign", description: "Plan channels, budget and creative direction.", priority: "medium", status: "pending", dueDate: iso(6, 10), category: "Marketing", assignee: "Priya Sharma", attachments: 0 },
-  { id: "t5", title: "Review vendor contracts", description: "Legal review of three new supplier agreements.", priority: "high", status: "overdue", dueDate: iso(-2, 9), category: "Operations", assignee: "Alex Morgan", attachments: 3 },
+  { id: "t5", title: "Review vendor contracts", description: "Legal review of three new supplier agreements.", priority: "high", status: "overdue", dueDate: iso(-2, 9), category: "Operations", assignee: "YamkelaM", attachments: 3 },
   { id: "t6", title: "Update brand guidelines", description: "Refresh logo usage and color palette docs.", priority: "low", status: "completed", dueDate: iso(-4, 14), category: "Design", assignee: "Mia Chen", attachments: 1 },
   { id: "t7", title: "Onboard new sales hires", description: "Set up accounts and training schedule.", priority: "medium", status: "in-progress", dueDate: iso(4, 11), category: "Sales", assignee: "Priya Sharma", attachments: 0 },
   { id: "t8", title: "Database performance tuning", description: "Optimize slow queries on the analytics service.", priority: "high", status: "pending", dueDate: iso(2, 16), category: "Engineering", assignee: "Diego Lopez", attachments: 2 },
-  { id: "t9", title: "Quarterly compliance check", description: "Verify GDPR data handling processes.", priority: "critical", status: "overdue", dueDate: iso(-1, 9), category: "Operations", assignee: "Alex Morgan", attachments: 5 },
+  { id: "t9", title: "Quarterly compliance check", description: "Verify GDPR data handling processes.", priority: "critical", status: "overdue", dueDate: iso(-1, 9), category: "Operations", assignee: "YamkelaM", attachments: 5 },
   { id: "t10", title: "Write release notes v2.4", description: "Summarize new features for the changelog.", priority: "low", status: "completed", dueDate: iso(-3, 13), category: "Engineering", assignee: "Diego Lopez", attachments: 0 },
   { id: "t11", title: "Customer feedback synthesis", description: "Cluster survey responses into themes.", priority: "medium", status: "pending", dueDate: iso(5, 10), category: "Marketing", assignee: "Mia Chen", attachments: 1 },
   { id: "t12", title: "Renew cloud subscriptions", description: "Confirm budget and renew annual plans.", priority: "high", status: "in-progress", dueDate: iso(8, 9), category: "Finance", assignee: "Priya Sharma", attachments: 0 },
