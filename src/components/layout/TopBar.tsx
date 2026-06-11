@@ -77,18 +77,18 @@ export function TopBar({ onMenu }: { onMenu: () => void }) {
                 {initials}
               </span>
               <span className="hidden text-left sm:block">
-                <span className="block text-sm font-semibold leading-tight">{currentUser.name}</span>
+                <span className="block text-sm font-semibold leading-tight">{displayName}</span>
                 <span className="block text-[11px] leading-tight text-muted-foreground">{currentUser.role}</span>
               </span>
             </button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-52">
-            <DropdownMenuLabel>{currentUser.email}</DropdownMenuLabel>
+            <DropdownMenuLabel>{displayEmail}</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem>Profile</DropdownMenuItem>
             <DropdownMenuItem>Settings</DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem className="text-destructive">Sign out</DropdownMenuItem>
+            <DropdownMenuItem onClick={handleSignOut} className="text-destructive">Sign out</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
