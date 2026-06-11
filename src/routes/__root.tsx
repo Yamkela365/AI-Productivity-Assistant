@@ -4,11 +4,13 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useNavigate,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 import { useRouterState } from "@tanstack/react-router";
+import { AuthProvider, useAuth } from "../lib/auth";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
