@@ -82,7 +82,7 @@ const day = (offsetDays: number) => {
 };
 
 export const users: AppUser[] = [
-  { id: "u1", name: "Alex Morgan", email: "alex@taskflow.ai", role: "Admin", avatarColor: "#2563eb" },
+  { id: "u1", name: "YamkelaM", email: "yamkela@taskflow.ai", role: "Admin", avatarColor: "#2563eb" },
   { id: "u2", name: "Priya Sharma", email: "priya@taskflow.ai", role: "Manager", avatarColor: "#14b8a6" },
   { id: "u3", name: "Diego Lopez", email: "diego@taskflow.ai", role: "User", avatarColor: "#f59e0b" },
   { id: "u4", name: "Mia Chen", email: "mia@taskflow.ai", role: "User", avatarColor: "#8b5cf6" },
