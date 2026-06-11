@@ -1,5 +1,7 @@
 import { Menu, Search, Bell, Moon, Sun } from "lucide-react";
+import { useNavigate } from "@tanstack/react-router";
 import { useTheme } from "@/lib/theme";
+import { useAuth } from "@/lib/auth";
 import { currentUser } from "@/lib/mock-data";
 import {
   DropdownMenu,
@@ -12,7 +14,16 @@ import {
 
 export function TopBar({ onMenu }: { onMenu: () => void }) {
   const { theme, toggle } = useTheme();
-  const initials = currentUser.name.split(" ").map((n) => n[0]).join("");
+  const { user, signOut } = useAuth();
+  const navigate = useNavigate();
+  const displayName = (user?.user_metadata?.full_name as string) || user?.email || currentUser.name;
+  const displayEmail = user?.email || currentUser.email;
+  const initials = displayName.split(" ").map((n: string) => n[0]).join("").slice(0, 2).toUpperCase();
+
+  const handleSignOut = async () => {
+    await signOut();
+    navigate({ to: "/login" });
+  };
 
   return (
     <header className="sticky top-0 z-30 flex h-16 items-center gap-3 border-b border-border bg-background/80 px-4 backdrop-blur lg:px-6">
