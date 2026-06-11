@@ -96,6 +96,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "TaskFlow AI — Smart Task Management Platform" },
+      { name: "description", content: "TaskFlow AI is a smart, AI-powered platform for managing tasks, appointments, and audits." },
+      { property: "og:description", content: "TaskFlow AI is a smart, AI-powered platform for managing tasks, appointments, and audits." },
+      { name: "twitter:description", content: "TaskFlow AI is a smart, AI-powered platform for managing tasks, appointments, and audits." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/24cdb9c7-f42f-41e1-bd57-daf45a5708f6/id-preview-5597f449--84d8d0bd-7ae9-478b-bacf-099fe9318feb.lovable.app-1781097219381.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/24cdb9c7-f42f-41e1-bd57-daf45a5708f6/id-preview-5597f449--84d8d0bd-7ae9-478b-bacf-099fe9318feb.lovable.app-1781097219381.png" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
