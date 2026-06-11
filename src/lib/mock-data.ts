@@ -125,12 +125,12 @@ export const audits: Audit[] = [
 ];
 
 export const emails: Email[] = [
-  { id: "e1", from: "Acme Corp", fromEmail: "ops@acme.com", subject: "Contract renewal — action needed by Friday", preview: "Hi Alex, please review the attached renewal terms and confirm before the deadline this Friday.", date: iso(0, 8, 12), box: "inbox", unread: true, flagged: true },
+  { id: "e1", from: "Acme Corp", fromEmail: "ops@acme.com", subject: "Contract renewal — action needed by Friday", preview: "Hi YamkelaM, please review the attached renewal terms and confirm before the deadline this Friday.", date: iso(0, 8, 12), box: "inbox", unread: true, flagged: true },
   { id: "e2", from: "Priya Sharma", fromEmail: "priya@taskflow.ai", subject: "Q3 campaign draft for review", preview: "Sharing the first draft of the campaign plan. Can we sync tomorrow to finalize?", date: iso(0, 7, 40), box: "inbox", unread: true, flagged: false },
   { id: "e3", from: "GitHub", fromEmail: "noreply@github.com", subject: "Security alert in repository", preview: "A new vulnerability was detected in one of your dependencies.", date: iso(-1, 22, 5), box: "inbox", unread: true, flagged: false },
   { id: "e4", from: "Finance Team", fromEmail: "finance@taskflow.ai", subject: "Reminder: submit expenses", preview: "Monthly expense reports are due end of week. Please follow up.", date: iso(-1, 16, 0), box: "inbox", unread: false, flagged: false },
-  { id: "e5", from: "Alex Morgan", fromEmail: "alex@taskflow.ai", subject: "Re: Roadmap priorities", preview: "Agreed on the priorities. Let's lock the deadline for the launch.", date: iso(-2, 10, 0), box: "sent", unread: false, flagged: false },
-  { id: "e6", from: "Alex Morgan", fromEmail: "alex@taskflow.ai", subject: "Draft: Partnership proposal", preview: "Outline for the partnership pitch — still need numbers.", date: iso(-1, 18, 0), box: "drafts", unread: false, flagged: false },
+  { id: "e5", from: "YamkelaM", fromEmail: "yamkela@taskflow.ai", subject: "Re: Roadmap priorities", preview: "Agreed on the priorities. Let's lock the deadline for the launch.", date: iso(-2, 10, 0), box: "sent", unread: false, flagged: false },
+  { id: "e6", from: "YamkelaM", fromEmail: "yamkela@taskflow.ai", subject: "Draft: Partnership proposal", preview: "Outline for the partnership pitch — still need numbers.", date: iso(-1, 18, 0), box: "drafts", unread: false, flagged: false },
   { id: "e7", from: "Newsletter", fromEmail: "hello@producthunt.com", subject: "This week in tech", preview: "Top launches and trends you might have missed.", date: iso(-6, 9, 0), box: "archived", unread: false, flagged: false },
 ];
 
