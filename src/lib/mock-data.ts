@@ -108,12 +108,12 @@ export const tasks: Task[] = [
 ];
 
 export const appointments: Appointment[] = [
-  { id: "a1", title: "Product strategy sync", date: day(0), time: "10:00", location: "Zoom", notes: "Discuss roadmap for next quarter.", attendees: ["Alex Morgan", "Priya Sharma"], meetingLink: "https://zoom.us/j/123", status: "upcoming" },
+  { id: "a1", title: "Product strategy sync", date: day(0), time: "10:00", location: "Zoom", notes: "Discuss roadmap for next quarter.", attendees: ["YamkelaM", "Priya Sharma"], meetingLink: "https://zoom.us/j/123", status: "upcoming" },
   { id: "a2", title: "Client onboarding call", date: day(1), time: "14:00", location: "Google Meet", notes: "Walk through platform setup with Acme Co.", attendees: ["Diego Lopez", "Mia Chen"], meetingLink: "https://meet.google.com/abc", status: "upcoming" },
-  { id: "a3", title: "Field audit — Warehouse B", date: day(2), time: "09:30", location: "Site B, Rotterdam", notes: "On-site safety compliance audit.", attendees: ["Alex Morgan"], status: "upcoming" },
+  { id: "a3", title: "Field audit — Warehouse B", date: day(2), time: "09:30", location: "Site B, Rotterdam", notes: "On-site safety compliance audit.", attendees: ["YamkelaM"], status: "upcoming" },
   { id: "a4", title: "Design review", date: day(-1), time: "11:00", location: "Figma", notes: "Reviewed onboarding mockups.", attendees: ["Mia Chen", "Priya Sharma"], status: "completed" },
-  { id: "a5", title: "Budget planning", date: day(-3), time: "15:00", location: "Conference Room A", notes: "Cancelled — rescheduled to next week.", attendees: ["Alex Morgan", "Priya Sharma"], status: "cancelled" },
-  { id: "a6", title: "Weekly standup", date: day(3), time: "09:00", location: "Microsoft Teams", notes: "Team progress check-in.", attendees: ["Alex Morgan", "Diego Lopez", "Mia Chen"], meetingLink: "https://teams.microsoft.com/l/x", status: "upcoming" },
+  { id: "a5", title: "Budget planning", date: day(-3), time: "15:00", location: "Conference Room A", notes: "Cancelled — rescheduled to next week.", attendees: ["YamkelaM", "Priya Sharma"], status: "cancelled" },
+  { id: "a6", title: "Weekly standup", date: day(3), time: "09:00", location: "Microsoft Teams", notes: "Team progress check-in.", attendees: ["YamkelaM", "Diego Lopez", "Mia Chen"], meetingLink: "https://teams.microsoft.com/l/x", status: "upcoming" },
 ];
 
 export const audits: Audit[] = [
