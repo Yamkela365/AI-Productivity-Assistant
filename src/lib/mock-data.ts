@@ -117,9 +117,9 @@ export const appointments: Appointment[] = [
 ];
 
 export const audits: Audit[] = [
-  { id: "au1", name: "Annual Security Audit", date: day(-5), department: "IT", auditor: "Alex Morgan", findings: 7, risk: "high", status: "in-review", compliance: 82 },
+  { id: "au1", name: "Annual Security Audit", date: day(-5), department: "IT", auditor: "YamkelaM", findings: 7, risk: "high", status: "in-review", compliance: 82 },
   { id: "au2", name: "Financial Controls Review", date: day(-12), department: "Finance", auditor: "Priya Sharma", findings: 3, risk: "medium", status: "closed", compliance: 95 },
-  { id: "au3", name: "Warehouse Safety Inspection", date: day(2), department: "Operations", auditor: "Alex Morgan", findings: 0, risk: "low", status: "open", compliance: 100 },
+  { id: "au3", name: "Warehouse Safety Inspection", date: day(2), department: "Operations", auditor: "YamkelaM", findings: 0, risk: "low", status: "open", compliance: 100 },
   { id: "au4", name: "GDPR Compliance Audit", date: day(-2), department: "Legal", auditor: "Priya Sharma", findings: 12, risk: "critical", status: "open", compliance: 64 },
   { id: "au5", name: "Vendor Risk Assessment", date: day(-20), department: "Procurement", auditor: "Diego Lopez", findings: 5, risk: "medium", status: "closed", compliance: 88 },
 ];
