@@ -136,23 +136,44 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
-function RootComponent() {
-  const { queryClient } = Route.useRouteContext();
+function AuthGate({ children }: { children: ReactNode }) {
+  const navigate = useNavigate();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const bare = pathname === "/login" || pathname === "/register";
+  const { user, loading } = useAuth();
+
+  useEffect(() => {
+    if (!loading && !user && !bare) {
+      navigate({ to: "/login" });
+    }
+  }, [loading, user, bare, navigate]);
+
+  if (bare) return <>{children}</>;
+
+  if (loading || !user) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-background">
+        <div className="h-8 w-8 animate-spin rounded-full border-2 border-muted border-t-primary" />
+      </div>
+    );
+  }
+
+  return <AppShell>{children}</AppShell>;
+}
+
+function RootComponent() {
+  const { queryClient } = Route.useRouteContext();
 
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
-        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-        {bare ? (
-          <Outlet />
-        ) : (
-          <AppShell>
+        <AuthProvider>
+          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+          <AuthGate>
             <Outlet />
-          </AppShell>
-        )}
-        <Toaster position="top-right" richColors />
+          </AuthGate>
+          <Toaster position="top-right" richColors />
+        </AuthProvider>
       </ThemeProvider>
     </QueryClientProvider>
   );
