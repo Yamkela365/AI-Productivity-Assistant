@@ -174,19 +174,19 @@ export const teamPerformance = users.map((u) => ({
 
 // Weather
 export const weather = {
-  city: "Amsterdam",
-  temp: 18,
-  condition: "Partly Cloudy",
-  humidity: 62,
-  wind: 14,
+  city: "Cape Town",
+  temp: 22,
+  condition: "Sunny",
+  humidity: 55,
+  wind: 18,
   forecast: [
-    { day: "Mon", hi: 19, lo: 11, icon: "cloud" },
-    { day: "Tue", hi: 21, lo: 12, icon: "sun" },
-    { day: "Wed", hi: 17, lo: 10, icon: "rain" },
-    { day: "Thu", hi: 16, lo: 9, icon: "rain" },
-    { day: "Fri", hi: 20, lo: 11, icon: "sun" },
-    { day: "Sat", hi: 22, lo: 13, icon: "sun" },
-    { day: "Sun", hi: 18, lo: 10, icon: "cloud" },
+    { day: "Mon", hi: 23, lo: 14, icon: "sun" },
+    { day: "Tue", hi: 24, lo: 15, icon: "sun" },
+    { day: "Wed", hi: 21, lo: 13, icon: "cloud" },
+    { day: "Thu", hi: 19, lo: 12, icon: "rain" },
+    { day: "Fri", hi: 22, lo: 14, icon: "sun" },
+    { day: "Sat", hi: 25, lo: 16, icon: "sun" },
+    { day: "Sun", hi: 23, lo: 15, icon: "cloud" },
   ] as { day: string; hi: number; lo: number; icon: "sun" | "cloud" | "rain" }[],
 };
 
